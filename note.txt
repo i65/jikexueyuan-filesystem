@@ -1,0 +1,71 @@
+（一）目录的基本操作
+
+一、文件类型
+1、is_dir() --判断给定文件是否是一个目录。
+2、is_executable()--判断给定文件是否是可执行的。
+3、is_file()--判断给定文件是否为一个正常的文件
+4、is_link()--判断给定文件是否为一个符号连接
+5、is_readable()--判断给定文件是否可读
+6、is_writable()--判断给定文件是否可写
+
+二、文件的属性
+1、file_exists()--检查文件或目录是否存在
+2、filesize()--取得文件的大小
+3、filectime()--获取文件的创建时间，返回unix时间戳格式
+4、filemtime()--获取文件的修改时间，返回unix时间戳格式
+5、fileatime()--获取文件的访问时间，返回unix时间戳格式
+6、stat()--获取文件大部分属性（少用）
+
+三、目录的基本操作
+1、解析目录的路径
+    1）、绝对路径：
+        在unix系统中的绝对路径，必须使用“/”分隔
+        在window系统中的绝对路径，默认使用“\分隔
+        在window系统中也可使用“/”分隔
+    2）、相对路径
+    3）、相关函数
+        （1）、basename()--返回路径中的文件名部分
+            语法：string basename( string path [, string suffix])
+        （2）、dirname( string path)--返回路径中的目录部分
+2、如何遍历目录
+    1）、resource opendir( string path [,resource context])--打开目录句柄
+        打开一个目录句柄，可用于之后的closedir()readdir()和rewinddir()调用中
+    2）、string readdir( resource dir_handle)--从目录句柄中读取条目
+    3）、void closedir( resource dir_handle)--关闭目录句柄
+    4）、void rewinddir( resource dir_handle)--倒回目录句柄
+3、统计目录大小
+    1）、float disk_free_space(string directory)--返回目录中的可用空间
+    2）、float disk_total_space(string directory)--返回一个目录中的磁盘总大小
+4、建立与删除目录
+    1）、bool mkdir( string pathname [, int mode])--新建目录
+    2）、bool rmdir(string dirname)--删除目录，注意该目录必须是空的，而且要有相应的权限
+        如果成功则返回true，失败则返回false
+    3）、bool unlink( string filename )--删除文件
+5、复制与移动目录
+    1）、bool copy( string source, string dest)--拷贝文件
+        将文件从source拷贝到dest。成功返回true，失败返回false
+        php中没有提供复制与移动目录的相关函数。
+
+6、作业：
+    1）、如何删除目录
+    2）、如何复制与移动目录
+
+
+（二）、文件的基本操作
+
+一、文件的打开与关闭
+    1、resource fopen(string filename, string mode [, bool use_include_path [, resource zcontext]])--打开文件或者url
+        mode:
+        r：
+        r+:
+        w:
+        w+:
+        a:
+        a+:
+        x:
+        x+:
+二、写入文件
+三、读取文件的内容
+四、访问过程文件
+五、文件的锁定机制
+六、文件的一些基本操作函数
