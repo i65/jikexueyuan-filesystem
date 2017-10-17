@@ -64,8 +64,16 @@
         a+:
         x:
         x+:
+    2、bool fclose( resource $handle);--关闭一个已打开的文件指针
 二、写入文件
+    1、int fwrite(resource handle, string string [, int length])--写入文件（可安全用于二进制）
 三、读取文件的内容
+    1、fread()--读取文件（可用于二进制文件）
+    2、file_get_contents()--将文件读入字符串
+    3、fgets()--从打开的文件中读取一行
+    4、fgetc()--从打开的文件中读取一个字符
+    5、file()--把文件读入一个数组中（无需使用fopen打开）（了解即可）
+    6、readfile()--读取一个文件，并输出到输出缓冲（无需使用fopen打开）（了解即可）
 四、访问过程文件
 五、文件的锁定机制
 六、文件的一些基本操作函数
